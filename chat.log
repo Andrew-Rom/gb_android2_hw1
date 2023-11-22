@@ -1,0 +1,18 @@
+Thu Nov 23 00:39:34 GMT+03:00 2023	user1 connected
+
+Thu Nov 23 00:39:36 GMT+03:00 2023	user2 connected
+
+Thu Nov 23 00:39:40 GMT+03:00 2023	user3 connected
+
+Thu Nov 23 00:39:42 GMT+03:00 2023	user4 connected
+
+Thu Nov 23 00:39:44 GMT+03:00 2023	user3 disconnected
+
+Thu Nov 23 00:39:58 GMT+03:00 2023	user2 > Test from user2
+
+Thu Nov 23 00:40:09 GMT+03:00 2023	user1 > Test from user1
+
+Thu Nov 23 00:40:14 GMT+03:00 2023	user5 connected
+
+Thu Nov 23 00:40:19 GMT+03:00 2023	user1 disconnected
+
