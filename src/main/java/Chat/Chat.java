@@ -50,8 +50,8 @@ public class Chat extends JFrame {
     int serverPort;
     String message;
 
-    Chat() throws IOException {
-        readChatLog();
+    Chat() {
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
         setTitle("ChatWindow");
@@ -101,6 +101,7 @@ public class Chat extends JFrame {
                                 .map(chatUser -> chatUser.userLogin)
                                 .toList().toArray(new String[0]);
                         userList.setListData(userLst);
+                        readChatLog();
                         logInfo.append(message);
                         System.out.print(message);
                         try {
