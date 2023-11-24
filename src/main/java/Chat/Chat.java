@@ -2,10 +2,7 @@ package Chat;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -145,21 +142,15 @@ public class Chat extends JFrame {
         btnSend.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Date date = new Date();
-                if (loginField.getText().length() > 0 && passwordField.getText().length() > 0) {
-                    ChatUser user = auth(loginField.getText(), passwordField.getText());
-                    if (user.isConnected) {
-                        message = date.toString() + "\t" +
-                                loginField.getText() + " > " +
-                                messageField.getText() + "\n\n";
-                        logInfo.append(message);
-                        System.out.print(message);
-                        try {
-                            saveChatLog(message);
-                        } catch (IOException ex) {
-                            throw new RuntimeException(ex);
-                        }
-                    }
+                sendMessage();
+            }
+        });
+
+        messageField.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    sendMessage();
                 }
             }
         });
@@ -205,6 +196,28 @@ public class Chat extends JFrame {
             }
         }
         return null;
+    }
+
+    private void sendMessage() {
+        Date date = new Date();
+        if (loginField.getText().length() > 0
+                && passwordField.getText().length() > 0
+                && messageField.getText().length() > 0) {
+            ChatUser user = auth(loginField.getText(), passwordField.getText());
+            if (user.isConnected) {
+                message = date + "\t" +
+                        loginField.getText() + " > " +
+                        messageField.getText() + "\n\n";
+                logInfo.append(message);
+                System.out.print(message);
+                messageField.setText(null);
+                try {
+                    saveChatLog(message);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        }
     }
 
     private void saveChatLog(String text) throws IOException {

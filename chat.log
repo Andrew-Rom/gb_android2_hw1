@@ -18,3 +18,27 @@ Thu Nov 23 00:40:19 GMT+03:00 2023	user1 disconnected
 
 Thu Nov 23 00:48:01 GMT+03:00 2023	1 connected
 
+Fri Nov 24 09:49:38 GMT+03:00 2023	1 connected
+
+Fri Nov 24 09:49:44 GMT+03:00 2023	1 > 1
+
+Fri Nov 24 09:54:15 GMT+03:00 2023	2 connected
+
+Fri Nov 24 09:54:18 GMT+03:00 2023	2 > 2
+
+Fri Nov 24 09:54:20 GMT+03:00 2023	2 > 2
+
+Fri Nov 24 09:54:24 GMT+03:00 2023	2 disconnected
+
+Fri Nov 24 09:56:44 GMT+03:00 2023	q connected
+
+Fri Nov 24 09:56:46 GMT+03:00 2023	q > q
+
+Fri Nov 24 09:56:50 GMT+03:00 2023	q > qqq
+
+Fri Nov 24 09:56:53 GMT+03:00 2023	q disconnected
+
+Fri Nov 24 09:56:57 GMT+03:00 2023	q connected
+
+Fri Nov 24 09:57:00 GMT+03:00 2023	q > dd
+
