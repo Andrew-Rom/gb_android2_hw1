@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ServerRun extends JFrame {
+public class ServerRun extends JFrame implements Listener{
     private static final int WINDOW_HEIGHT = 400;
     private static final int WINDOW_WIDTH = 400;
     private static final int WINDOW_POSX = 800;
@@ -14,7 +14,7 @@ public class ServerRun extends JFrame {
     JButton btnStart = new JButton("Start Server");
     JButton btnStop = new JButton("Stop Server");
     JTextArea serverStatus = new JTextArea();
-    boolean isServerWorking;
+    ServerListener server = new Server(this);
 
     ServerRun() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -26,24 +26,13 @@ public class ServerRun extends JFrame {
         btnStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!isServerWorking) {
-                    isServerWorking = true;
-                    serverStatus.append("Server started\n");
-                } else {
-                    serverStatus.append("Server has been already started\n");
-                }
-
+                server.serverListener(true);
             }
         });
         btnStop.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (isServerWorking) {
-                    isServerWorking = false;
-                    serverStatus.append("Server stopped\n");
-                } else {
-                    serverStatus.append("Server has been already stopped\n");
-                }
+               server.serverListener(false);
             }
         });
         JPanel serverbuttonsPanel = new JPanel(new GridLayout(1, 2));
@@ -58,5 +47,10 @@ public class ServerRun extends JFrame {
 
     public static void main(String[] args) {
         new ServerRun();
+    }
+
+    @Override
+    public void messageRes(String text) {
+        serverStatus.append(text);
     }
 }
