@@ -1,7 +1,7 @@
 package hw2;
 public interface FrontAction {
     void front();
-    default void cofee() {
-        System.out.println("Drink");
+    default void drinkCoffee() {
+        System.out.println("Drink coffee");
     };
 }
