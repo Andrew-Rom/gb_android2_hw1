@@ -241,7 +241,7 @@ public class Chat extends JFrame {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         new Chat();
     }
 }

@@ -5,12 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/*
-Создать простейшее окно управления сервером (по сути, любым), содержащее две кнопки
-(JButton) – запустить сервер и остановить сервер. Кнопки должны просто логировать нажатие
-(имитировать запуск и остановку сервера, соответственно) и выставлять внутри интерфейса
-соответствующее булево isServerWorking.
- */
 public class ServerRun extends JFrame {
     private static final int WINDOW_HEIGHT = 400;
     private static final int WINDOW_WIDTH = 400;
